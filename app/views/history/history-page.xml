@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ActionBar class="action-bar">
+        <NavigationButton text="Atrás" android.systemIcon="ic_menu_back" />
+        <StackLayout orientation="horizontal" horizontalAlignment="center">
+            <Image src="~/images/lock.png" width="20" height="20" marginRight="5" verticalAlignment="center" />
+            <Label text="Historial" class="action-bar-title" />
+        </StackLayout>
+    </ActionBar>
+
+    <ListView items="{{ records }}" class="list-group">
+        <ListView.itemTemplate>
+            <GridLayout columns="auto, *, auto" class="list-group-item p-4">
+                <Image col="0" src="{{ iconPath }}" width="24" height="24" marginRight="8" />
+                <StackLayout col="1">
+                    <Label text="{{ type }}" class="font-bold" />
+                    <Label text="{{ formattedDate }}" class="text-gray-600" />
+                </StackLayout>
+                <Label col="2" text="{{ estado }}" class="{{ estado === 'Cerrado' ? 'status-badge-green' : 'status-badge-red' }}" />
+            </GridLayout>
+        </ListView.itemTemplate>
+    </ListView>
+</Page>

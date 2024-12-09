@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.action-bar {
+    background-color: #4285f4;
+    color: white;
+}
+
+.action-bar-title {
+    color: white;
+    font-size: 20;
+    font-weight: bold;
+    text-align: center;
+}
+
+.action-bar-icon {
+    font-size: 24;
+    vertical-align: center;
+}
+
+.lock-option {
+    background-color: white;
+    border-radius: 8;
+    padding: 16;
+    margin: 4;
+    elevation: 2;
+}
+
+.lock-option.selected {
+    background-color: #e8f0fe;
+    border-width: 2;
+    border-color: #4285f4;
+}
+
+.btn {
+    height: 50;
+    margin: 8 16;
+    border-radius: 25;
+    font-size: 18;
+    font-weight: bold;
+}
+
+.btn-primary {
+    background-color: #4285f4;
+    color: white;
+}
+
+.list-group-item {
+    border-bottom-width: 1;
+    border-color: #e0e0e0;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.p-10 {
+    padding: 10;
+}
+
+.m-10 {
+    margin: 10;
+}
+
+.p-r-10 {
+    padding-right: 10;
+}

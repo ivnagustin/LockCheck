@@ -1,0 +1,15 @@
+<Frame>
+  <ListView items="{{ records }}" height="300">
+    <ListView.itemTemplate>
+      <GridLayout columns="auto, *, auto" class="record-item">
+        <Image col="0" src="{{ iconSrc }}" class="fas" width="24" height="24" marginRight="8" />
+        <StackLayout col="1">
+          <Label text="{{ type }}" class="font-bold" />
+          <Label text="{{ formattedDate }}" class="text-gray-600" />
+        </StackLayout>
+        <Label col="2" text="{{ estado }}" 
+               class="{{ estado === 'Cerrado' ? 'status-badge-green' : 'status-badge-red' }}" />
+      </GridLayout>
+    </ListView.itemTemplate>
+  </ListView>
+</Frame>

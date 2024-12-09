@@ -1,0 +1,5 @@
+<Frame>
+  <Button text="{{ text }}" 
+          tap="{{ onTap }}" 
+          class="main-button {{ className }}" />
+</Frame>

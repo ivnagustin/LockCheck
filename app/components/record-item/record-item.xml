@@ -1,0 +1,8 @@
+<GridLayout columns="auto, *, auto" class="record-item">
+    <Label col="0" text="{{ type.iconClass }}" class="{{ type.iconClass }}" fontSize="24" marginRight="8" />
+    <StackLayout col="1">
+        <Label text="{{ type.name }}" class="font-bold" />
+        <Label text="{{ formattedDate }}" class="text-gray-600" />
+    </StackLayout>
+    <Label col="2" text="{{ statusText }}" class="{{ statusClass }}" />
+</GridLayout>

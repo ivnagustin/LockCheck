@@ -1,0 +1,12 @@
+<GridLayout rows="auto" columns="*, *, *" class="lock-type-grid">
+    <Repeater items="{{ lockTypes }}">
+        <Repeater.itemTemplate>
+            <StackLayout col="{{ $index }}" 
+                        class="{{ $parent.selectedType.id === id ? 'lock-type-button selected' : 'lock-type-button' }}" 
+                        tap="{{ $parent.onSelectType }}">
+                <Label text="{{ iconClass }}" class="{{ iconClass }}" fontSize="32" />
+                <Label text="{{ name }}" />
+            </StackLayout>
+        </Repeater.itemTemplate>
+    </Repeater>
+</GridLayout>

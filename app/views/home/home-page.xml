@@ -1,0 +1,44 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ActionBar class="action-bar" flat="true">
+        <GridLayout columns="auto, auto" horizontalAlignment="center">
+    <Label col="0" text="LockCheck" class="action-bar-title" />
+    <Label col="1" text="🔒" class="action-bar-icon p-l-5"/>
+    </GridLayout>
+
+    </ActionBar>
+
+    <GridLayout rows="auto, *, auto">
+        <!-- Lock Type Selection -->
+        <GridLayout row="0" rows="auto" columns="*,*,*" class="p-10">
+            <StackLayout col="0" class="lock-option {{ selectedType === 'home' ? 'selected' : '' }}" tap="{{ onSelectType }}" data-type="home">
+                <Label text="🏠" class="text-center" fontSize="24"/>
+                <Label text="Casa" class="text-center"/>
+            </StackLayout>
+            <StackLayout col="1" class="lock-option {{ selectedType === 'car' ? 'selected' : '' }}" tap="{{ onSelectType }}" data-type="car">
+                <Label text="🚗" class="text-center" fontSize="24"/>
+                <Label text="Coche" class="text-center"/>
+            </StackLayout>
+            <StackLayout col="2" class="lock-option {{ selectedType === 'office' ? 'selected' : '' }}" tap="{{ onSelectType }}" data-type="office">
+                <Label text="🏢" class="text-center" fontSize="24"/>
+                <Label text="Oficina" class="text-center"/>
+            </StackLayout>
+        </GridLayout>
+
+        <!-- History List -->
+        <ListView row="1" items="{{ locks }}" class="list-group" height="100%">
+            <ListView.itemTemplate>
+                <GridLayout columns="auto, *, auto" class="list-group-item p-10">
+                    <Label col="0" text="{{ typeEmoji }}" fontSize="24" marginRight="10"/>
+                    <StackLayout col="1">
+                        <Label text="{{ typeName }}" class="font-bold"/>
+                        <Label text="{{ formattedDate }}" class="text-gray-500"/>
+                    </StackLayout>
+                    <Label col="2" text="🔒" fontSize="20"/>
+                </GridLayout>
+            </ListView.itemTemplate>
+        </ListView>
+
+        <!-- Lock Button -->
+        <Button row="2" text="Marcar como Cerrado" tap="{{ onLock }}" class="btn btn-primary m-10"/>
+    </GridLayout>
+</Page>
